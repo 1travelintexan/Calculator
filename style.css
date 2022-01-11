@@ -1,7 +1,86 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+}
+
+.calculator {
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(50, 50, 50);
+  border-radius: 2rem;
+  margin: 5px;
+  padding: 5px;
+}
 #screen {
-  background-color: rgb(198, 198, 198);
+  background-color: rgb(104, 144, 106);
+  color: black;
+  font-size: 2.5rem;
   width: 80%;
-  height: 2rem;
+  height: 4rem;
   border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-div {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.number-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 15rem;
   margin: 20px;
+}
+
+.operator-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+}
+
+.number {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10px;
+  font-size: 4rem;
+  background-color: rgb(179, 179, 179);
+  color: azure;
+}
+
+.operator {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: rgb(33, 33, 33);
+  color: azure;
+  margin: 10px;
+}
+
+.equals {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: rgb(3, 28, 247);
+  color: azure;
+  margin: 10px;
+}
+
+button:hover {
+  box-shadow: 4px 4px 8px white;
+  border: 1px solid whitesmoke;
 }
