@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./images/ti-89.jpeg" />
+    <link rel="icon" href="./images/ti-89.png" />
     <title>Calculator</title>
   </head>
   <body>
     <div class="calculator">
-      <h3>Texas Instruments</h3>
+      <div class="header">
+        <section>
+          <img class="icon" src="./images/texas.png" alt="texas-logo" />
+          <h1>Texas Instruments</h1>
+        </section>
+        <h2>TI-86</h2>
+      </div>
       <section id="screen"></section>
       <div class="buttons-div">
         <div class="number-buttons">
@@ -24,9 +30,13 @@
           <button class="number" id="eight">8</button>
           <button class="number" id="nine">9</button>
           <button class="number" id="zero">0</button>
+          <button class="number" id="point">.</button>
+        </div>
+        <div class="clear-delete">
+          <button class="operator clear" id="clear">Clear</button>
+          <button class="operator delete" id="delete">Delete</button>
         </div>
         <div class="operator-buttons">
-          <button class="operator" id="clear">Clear</button>
           <button class="operator" id="plus">+</button>
           <button class="operator" id="minus">-</button>
           <button class="operator" id="times">*</button>

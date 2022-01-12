@@ -1,7 +1,7 @@
 let numberBtns = document.querySelectorAll(".number");
 let operatorBtns = document.querySelectorAll(".operator");
 let equalBtn = document.querySelector(".equals");
-let clearBtn = document.querySelector(".clear");
+let clearBtn = document.querySelector("#clear");
 
 let screen = document.querySelector("#screen");
 let firstNumber = "";
@@ -65,19 +65,40 @@ clearBtn.addEventListener("click", () => {
 //function to perform all of the math
 function operate(num1, num2, operator) {
   if (operator == "+") {
-    return num1 + num2;
+    let solution = num1 + num2;
+    if (solution.toString().includes(".")) {
+      return solution.toFixed(4);
+    } else {
+      return solution;
+    }
   }
   if (operator == "-") {
-    return num1 - num2;
+    let solution = num1 - num2;
+    if (solution.toString().includes(".")) {
+      return solution.toFixed(4);
+    } else {
+      return solution;
+    }
   }
   if (operator == "/") {
     if (num2 == 0) {
       return "You can't divide by zero!";
     } else {
-      return num1 / num2;
+      let solution = num1 / num2;
+      console.log(solution);
+      if (solution.toString().includes(".")) {
+        return solution.toFixed(4);
+      } else {
+        return solution;
+      }
     }
   }
   if (operator == "*") {
-    return num1 * num2;
+    let solution = num1 * num2;
+    if (solution.toString().includes(".")) {
+      return solution.toFixed(4);
+    } else {
+      return solution;
+    }
   }
 }

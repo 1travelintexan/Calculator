@@ -16,7 +16,23 @@ body {
   border-radius: 2rem;
   margin: 5px;
   padding: 5px;
+  box-shadow: 4px 4px 8px gray;
+  border: 4px solid black;
 }
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #screen {
   background-color: rgb(104, 144, 106);
   color: black;
@@ -40,8 +56,12 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 15rem;
-  margin: 20px;
+  width: 20rem;
+}
+
+.clear-delete {
+  display: flex;
+  justify-content: center;
 }
 
 .operator-buttons {
@@ -71,6 +91,16 @@ body {
   margin: 10px;
 }
 
+.clear {
+  background-color: rgb(212, 222, 72);
+  color: black;
+}
+
+.delete {
+  background-color: rgb(202, 59, 19);
+  color: black;
+}
+
 .equals {
   width: 5rem;
   height: 3rem;
@@ -79,6 +109,12 @@ body {
   background-color: rgb(3, 28, 247);
   color: azure;
   margin: 10px;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+  padding-right: 20px;
 }
 
 button:hover {
