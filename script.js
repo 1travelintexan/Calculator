@@ -1,7 +1,8 @@
 let numberBtns = document.querySelectorAll(".number");
 let operatorBtns = document.querySelectorAll(".operator");
-let equalBtn = document.querySelector(".equals");
+let equalBtn = document.querySelector("#equals");
 let clearBtn = document.querySelector("#clear");
+let deleteBtn = document.querySelector("#delete");
 
 let screen = document.querySelector("#screen");
 let firstNumber = "";
@@ -16,22 +17,8 @@ numberBtns.forEach((numberBtn) => {
       answer = false;
       screen.innerText = "";
       screen.innerText = screen.innerText + numberBtn.innerText;
-      if (operator == "") {
-        firstNumber = screen.innerText;
-        console.log("first", firstNumber);
-      } else {
-        secondNumber = screen.innerText;
-        console.log("second", secondNumber);
-      }
     } else {
       screen.innerText = screen.innerText + numberBtn.innerText;
-      if (operator == "") {
-        firstNumber = screen.innerText;
-        console.log("first", firstNumber);
-      } else {
-        secondNumber = screen.innerText;
-        console.log("second", secondNumber);
-      }
     }
   });
 });
@@ -39,6 +26,7 @@ numberBtns.forEach((numberBtn) => {
 //listener for all operator buttons
 operatorBtns.forEach((operatorBtn) => {
   operatorBtn.addEventListener("click", () => {
+    firstNumber = screen.innerText;
     screen.innerText = "";
     operator = operatorBtn.innerText;
   });
@@ -46,6 +34,7 @@ operatorBtns.forEach((operatorBtn) => {
 
 //listener for the equal button
 equalBtn.addEventListener("click", () => {
+  secondNumber = screen.innerText;
   let solution = operate(Number(firstNumber), Number(secondNumber), operator);
   screen.innerText = solution.toString();
   answer = true;
@@ -60,6 +49,12 @@ clearBtn.addEventListener("click", () => {
   secondNumber = "";
   operator = "";
   screen.innerText = "";
+});
+
+//delete button listener
+deleteBtn.addEventListener("click", () => {
+  console.log(screen.innerText.length);
+  screen.innerText = screen.innerText.slice(0, screen.innerText.length - 1);
 });
 
 //function to perform all of the math

@@ -94,14 +94,24 @@ section {
 .clear {
   background-color: rgb(212, 222, 72);
   color: black;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin: 10px;
 }
 
 .delete {
   background-color: rgb(202, 59, 19);
   color: black;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin: 10px;
 }
 
-.equals {
+#equals {
   width: 5rem;
   height: 3rem;
   border-radius: 10px;
