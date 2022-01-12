@@ -7,17 +7,31 @@ let screen = document.querySelector("#screen");
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
+let answer = false;
 
 //listener for all number buttons
 numberBtns.forEach((numberBtn) => {
   numberBtn.addEventListener("click", () => {
-    screen.innerText = screen.innerText + numberBtn.innerText;
-    if (operator == "") {
-      firstNumber = screen.innerText;
-      console.log("first", firstNumber);
+    if (answer == true) {
+      answer = false;
+      screen.innerText = "";
+      screen.innerText = screen.innerText + numberBtn.innerText;
+      if (operator == "") {
+        firstNumber = screen.innerText;
+        console.log("first", firstNumber);
+      } else {
+        secondNumber = screen.innerText;
+        console.log("second", secondNumber);
+      }
     } else {
-      secondNumber = screen.innerText;
-      console.log("second", secondNumber);
+      screen.innerText = screen.innerText + numberBtn.innerText;
+      if (operator == "") {
+        firstNumber = screen.innerText;
+        console.log("first", firstNumber);
+      } else {
+        secondNumber = screen.innerText;
+        console.log("second", secondNumber);
+      }
     }
   });
 });
@@ -32,8 +46,9 @@ operatorBtns.forEach((operatorBtn) => {
 
 //listener for the equal button
 equalBtn.addEventListener("click", () => {
-  let answer = operate(Number(firstNumber), Number(secondNumber), operator);
-  screen.innerText = answer.toString();
+  let solution = operate(Number(firstNumber), Number(secondNumber), operator);
+  screen.innerText = solution.toString();
+  answer = true;
   firstNumber = "";
   secondNumber = "";
   operator = "";
@@ -56,7 +71,11 @@ function operate(num1, num2, operator) {
     return num1 - num2;
   }
   if (operator == "/") {
-    return num1 / num2;
+    if (num2 == 0) {
+      return "You can't divide by zero!";
+    } else {
+      return num1 / num2;
+    }
   }
   if (operator == "*") {
     return num1 * num2;
